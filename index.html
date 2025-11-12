@@ -8,12 +8,30 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <nav>
+  <nav class="site-nav">
     <a href="index.html">Home</a>
-    <a href="form.html">Contact</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <h1>Welcome to My Restaurant</h1>
-  <p>This is the home page of my MIS 412 project..</p>
+  <header class="hero">
+    <h1>Welcome to My Restaurant</h1>
+    <p>Fresh. Simple. Local.</p>
+    <a class="btn" href="menu.html">View Menu</a>
+  </header>
+
+  <main>
+    <h2>Hours</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Day</th><th>Open</th><th>Close</th></tr></thead>
+        <tbody>
+          <tr><td>Mon–Fri</td><td>11:00</td><td>21:00</td></tr>
+          <tr><td>Sat</td><td>10:00</td><td>22:00</td></tr>
+          <tr><td>Sun</td><td>Closed</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
 </body>
 </html>
