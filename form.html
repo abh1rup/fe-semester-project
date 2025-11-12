@@ -1,13 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Contact Us | My Restaurant</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/styles.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | My Restaurant</title>
+
+  <!-- 1) Same stylesheet as index -->
+  <link rel="stylesheet" href="css/styles.css" />
+
   <script>
-    function handleSubmit(event) {
-      event.preventDefault();
+    // Same confirm + redirect behavior
+    function handleSubmit(e) {
+      e.preventDefault();
       const ok = confirm("Are you sure you want to submit?");
       if (ok) {
         alert("Thank you for contacting us!");
@@ -19,38 +23,51 @@
   </script>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="menu.html">Menu</a> |
+
+  <!-- 2) Same nav markup as index -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
     <a href="form.html">Contact</a>
   </nav>
 
-  <h1>Contact Us</h1>
-  <p>Please fill out the form below to get in touch with our restaurant.</p>
+  <!-- 3) Same hero section for a consistent header -->
+  <header class="hero">
+    <h1>Contact Us</h1>
+    <p>Reserve a table, ask a question, or leave feedback.</p>
+    <a class="btn" href="menu.html">View Menu</a>
+  </header>
 
-  <form onsubmit="handleSubmit(event)">
-    <label>First Name*<br>
-      <input type="text" name="firstName" required>
-    </label><br><br>
+  <!-- Main content container (same spacing feel as index) -->
+  <main>
+    <h2>Get in touch</h2>
 
-    <label>Email*<br>
-      <input type="email" name="email" required>
-    </label><br><br>
+    <!-- Reuse your form; classes will be picked up by styles.css -->
+    <form id="contactForm" onsubmit="handleSubmit(event)">
+      <label>First Name*<br>
+        <input type="text" name="firstName" required>
+      </label><br><br>
 
-    <label>Password*<br>
-      <input type="password" name="password" minlength="6" required>
-    </label><br><br>
+      <label>Email*<br>
+        <input type="email" name="email" required>
+      </label><br><br>
 
-    <label>Phone<br>
-  <input type="tel"
-       name="phone"
-       pattern="^(\d{10}|(\(\d{3}\)\s?\d{3}-\d{4})|\d{3}-\d{3}-\d{4})$"
-       title="Enter 10 digits (e.g. 5551234567 or 555-123-4567 or (555) 123-4567)"
-       placeholder="555-123-4567">
+      <label>Password*<br>
+        <input type="password" name="password" minlength="6" required>
+      </label><br><br>
 
-     </label><br><br>
+      <label>Phone<br>
+        <input type="tel" name="phone"
+               pattern="\d{10}|(\d{3}-\d{3}-\d{4})|(\(\d{3}\)\s?\d{3}-\d{4})"
+               title="Use 5551234567, 555-123-4567, or (555) 123-4567"
+               placeholder="555-123-4567">
+      </label><br><br>
 
-    <button type="submit">Submit</button>
-  </form>
+      <!-- Use the same .btn class so the button matches your index -->
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </main>
+
+  <footer>© 2025 My Restaurant</footer>
 </body>
 </html>
