@@ -205,3 +205,52 @@ footer {
   text-align: center;
 }
 
+/* Menu page card matches Contact/Hours look */
+.menu-section,
+.hours-section {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 40px auto;
+  text-align: left;
+  width: 80%;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-section h1,
+.hours-section h2 {
+  margin: 0 0 20px 0;
+  color: #222;
+  text-align: center;
+}
+
+/* Table look matches Hours */
+.menu-section table,
+.hours-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.menu-section th, .menu-section td,
+.hours-section th, .hours-section td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-section thead th,
+.hours-section thead th {
+  background-color: #f8f9fc;
+  color: #333;
+  font-weight: 600;
+}
+
+.menu-section tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
