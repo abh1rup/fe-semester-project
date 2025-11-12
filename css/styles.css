@@ -8,3 +8,96 @@ h1 { margin: 16px 0; }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; margin: 20px 0; }
 th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+
+
+/* ===== Form Layout & Card ===== */
+.form-card {
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+
+/* If you don't want to add a wrapper div, you can target the form directly */
+form {
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+
+/* ===== Form Headings ===== */
+form h1, form h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+/* ===== Labels & Field Stacking ===== */
+form label {
+  display: block;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+/* ===== Inputs, Selects, Textareas ===== */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d7dbe0;
+  border-radius: 10px;
+  background: #f9fafb;
+  font: inherit;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+/* Focus state */
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: #5b9cff;
+  box-shadow: 0 0 0 4px rgba(91,156,255,0.18);
+}
+
+/* Placeholder style (subtle) */
+::placeholder { color: #9aa3ad; }
+
+/* Spacing between groups */
+form .field {
+  margin-bottom: 14px;
+}
+
+/* ===== Validation Hints (HTML5) ===== */
+/* Optional, but nice: color the border as users type */
+form input:required:invalid { border-color: #e57373; }
+form input:required:valid   { border-color: #69c27d; }
+
+/* Show a small helper line if you use <small> under inputs */
+form small.hint {
+  display: block;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* ===== Submit Button ===== */
+form button,
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(90de
+
