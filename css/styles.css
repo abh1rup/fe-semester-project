@@ -255,31 +255,42 @@ footer {
 }
 
 /* === THANK YOU PAGE === */
+/* === THANK YOU PAGE (Centered Box) === */
+.thankyou-wrapper {
+  min-height: 80vh;                 /* fills most of screen */
+  display: flex;
+  justify-content: center;          /* horizontal center */
+  align-items: center;              /* vertical center */
+  text-align: center;
+  background-color: #f8f8f8;        /* light page background */
+}
+
 .thankyou-card {
   background-color: #fff;
-  text-align: center;
-  display: inline-block;
-  padding: 40px 50px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin: 80px auto;
+  padding: 50px 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
 }
 
 .thankyou-card h1 {
   color: #222;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 2rem;
 }
 
 .thankyou-card p {
   color: #555;
   margin-bottom: 25px;
+  font-size: 1rem;
 }
 
 .btn {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 12px 20px;
   background: linear-gradient(90deg, #6a5acd, #00bcd4);
-  color: white;
+  color: #fff;
   text-decoration: none;
   border-radius: 6px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
@@ -289,4 +300,3 @@ footer {
 .btn:hover {
   background: linear-gradient(90deg, #00bcd4, #6a5acd);
 }
-
