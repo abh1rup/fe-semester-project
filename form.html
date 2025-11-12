@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact | My Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <!-- Simple nav so this page is accessible from anywhere -->
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="form.html">Contact</a>
+  </nav>
+
+  <h1>Contact Us</h1>
+  <p>Please fill out the form below. Fields marked * are required.</p>
+
+  <!-- At least 4 inputs; ≥3 required -->
+  <form id="contactForm" novalidate>
+    <p>
+      <label>First Name*<br>
+        <input type="text" name="firstName" required>
+      </label>
+    </p>
+
+    <p>
+      <label>Email*<br>
+        <input type="email" name="email" required>
+      </label>
+    </p>
+
+    <p>
+      <label>Password* (min 6 chars)<br>
+        <input type="password" name="password" minlength="6" required>
+      </label>
+    </p>
+
+    <p>
+      <label>Phone (10 digits)<br>
+        <input type="tel" name="phone" pattern="\\d{10}" placeholder="5551234567">
+      </label>
+    </p>
+
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+
+  <script>
+    // HTML5 validation + confirm + redirect logic
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function (e) {
+      // Let the browser check required/format first
+      if (!form.checkValidity()) {
+        // Trigger native messages
+        // (Prevent default so we can allow the browser to show them)
+        e.preventDefault();
+        form.reportValidity();
+        return;
+      }
+
+      e.preventDefault(); // stop immediate submission
+
+      const ok = confirm("Are you sure you want to submit?");
+      if (ok) {
+        // Redirect to Thank You page with a flag so we can show an alert there
+        window.location.href = "thankyou.html?submitted=1";
+      } else {
+        // Stay on form page (no submission)
+        // Optional feedback
+        alert("Submission canceled.");
+      }
+    });
+  </script>
+</body>
+</html>
