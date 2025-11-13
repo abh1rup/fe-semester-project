@@ -340,7 +340,7 @@ footer {
   /* gradient overlay + image */
   background:
     linear-gradient(90deg, rgba(106,90,205,0.7), rgba(0,188,212,0.7)),
-    url("/hero-dish.jpg") center/cover no-repeat;
+    url("hero-dish.jpg") center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
