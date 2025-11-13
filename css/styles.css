@@ -18,27 +18,29 @@ img { max-width: 100%; display: block; }
 a { color: #0a6cff; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ========== Layout ========== */
+/* ========== Utilities ========== */
+.center { text-align: center; }
+.rounded-img { border-radius: 12px; }
+
+/* Visually hidden but screen-reader readable */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 1px, 1px); white-space: nowrap; border: 0;
+}
+
+/* Optional page container if you use it elsewhere */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 24px;
 }
 
-/* ========== Top Nav ========== */
-/* Works whether your nav has a class or not */
+/* ========== Navigation ========== */
 nav, .site-nav {
   background: #111;
   position: sticky;
   top: 0;
   z-index: 10;
-}
-
-nav .container, .site-nav .container {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  padding: 12px 24px;
 }
 
 nav a, .site-nav a {
@@ -47,13 +49,56 @@ nav a, .site-nav a {
 }
 nav a:hover, .site-nav a:hover { opacity: 0.85; }
 
+/* Structured main nav */
+.site-nav.main-nav { padding: 12px 0; text-align: center; }
+.site-nav.main-nav ul { list-style: none; margin: 0; padding: 0; }
+.site-nav.main-nav li { display: inline-block; margin: 0 20px; }
+.site-nav.main-nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; }
+.site-nav.main-nav a:hover { text-decoration: underline; }
 
-/* ========== Headings / Sections ========== */
-h1 { font-size: clamp(28px, 5vw, 44px); margin: 24px 0 8px; }
-h2 { font-size: clamp(22px, 3.5vw, 30px); margin: 24px 0 8px; }
-section, main { padding: 16px 0; }
+/* Active link */
+.site-nav.main-nav a.active {
+  color: #00bcd4;
+  border-bottom: 2px solid #00bcd4;
+  padding-bottom: 4px;
+}
+.site-nav.main-nav a.active:hover { text-decoration: none; }
 
-/* ========== Buttons ========== */
+/* ========== Hero (with background image + gradient overlay) ========== */
+.hero {
+  /* top layer = gradient overlay, bottom layer = image */
+  background:
+    linear-gradient(90deg, rgba(106,90,205,.7), rgba(0,188,212,.7)),
+    url("../hero-dish.jpg") center/cover no-repeat; /* styles.css is in /css */
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 40vh;              /* keeps height even with little text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  margin-bottom: 10px;
+  text-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+.hero p { font-size: 1.1rem; margin-bottom: 25px; }
+.hero .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #fff;
+  color: #111;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background .3s, color .3s;
+}
+.hero .btn:hover { background: #f0f0f0; color: #333; }
+
+/* ========== Buttons (shared) ========== */
 .btn, button[type="submit"] {
   display: inline-block;
   padding: 12px 16px;
@@ -67,7 +112,28 @@ section, main { padding: 16px 0; }
 }
 .btn:hover, button[type="submit"]:hover { filter: brightness(1.05); }
 
-/* ========== Tables (Menu/Hours) ========== */
+/* ========== Card-style Sections (About, Hours, Menu) ========== */
+.about-section,
+.hours-section,
+.menu-section {
+  background: #fff;
+  padding: 30px 40px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 700px;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-section h1,
+.hours-section h2,
+.menu-section h1 { margin: 0 0 20px 0; color: #222; text-align: center; }
+
+/* ========== Tables (used inside Hours/Menu cards) ========== */
 .table-wrap { overflow-x: auto; }
 
 table {
@@ -86,12 +152,10 @@ thead th {
   padding: 12px 14px;
   font-weight: 700;
 }
-
 tbody td {
   border-top: 1px solid #e9ecf3;
   padding: 12px 14px;
 }
-
 tbody tr:nth-child(even) { background: #fcfdff; }
 
 /* ========== Forms (Contact page) ========== */
@@ -103,9 +167,7 @@ form {
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
-
 label { display: block; font-weight: 600; margin: 8px 0 6px; color: #333; }
-
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -119,290 +181,35 @@ input[type="tel"] {
   font-size: 15px;
   margin-bottom: 16px;
 }
-
 input:focus {
   outline: none;
   background: #fff;
   border-color: #6a5acd;
   box-shadow: 0 0 0 3px rgba(106,90,205,0.18);
 }
-
-/* Make built-in invalid state look cleaner */
+/* Cleaner invalid state */
 input:invalid[required] { border-color: #e25555; }
-
-/* Center the submit button */
+/* Full-width submit button */
 form button[type="submit"] { width: 100%; margin-top: 6px; }
 
-/* ========== Footer ========== */
-footer {
-  color: #666;
-  text-align: center;
-  padding: 28px 16px 40px;
-}
-
-/* ========== Utilities ========== */
-.center { text-align: center; }
-.rounded-img { border-radius: 12px; }
-
-/* Responsive spacing */
-@media (max-width: 640px) {
-  nav .container, .site-nav .container { padding: 10px 16px; }
-  .container { padding: 18px; }
-}
-
-/* === HOURS TABLE CONTAINER === */
-.hours-section {
-  background-color: #fff;
-  padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;           /* centers horizontally */
-  text-align: left;
-  width: 80%;
-  max-width: 700px;
-
-  /* --- Center the whole block --- */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* === HOURS TABLE === */
-.hours-section table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-.hours-section th,
-.hours-section td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #eee;
-}
-
-.hours-section thead th {
-  background-color: #f8f9fc;
-  color: #333;
-  font-weight: 600;
-}
-
-.hours-section tbody tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-.hours-section h2 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #222;
-  text-align: center;
-}
-
-/* Menu page card matches Contact/Hours look */
-.menu-section,
-.hours-section {
-  background-color: #fff;
-  padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin: 40px auto;
-  text-align: left;
-  width: 80%;
-  max-width: 700px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.menu-section h1,
-.hours-section h2 {
-  margin: 0 0 20px 0;
-  color: #222;
-  text-align: center;
-}
-
-/* Table look matches Hours */
-.menu-section table,
-.hours-section table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.menu-section th, .menu-section td,
-.hours-section th, .hours-section td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #eee;
-}
-
-.menu-section thead th,
-.hours-section thead th {
-  background-color: #f8f9fc;
-  color: #333;
-  font-weight: 600;
-}
-
-.menu-section tbody tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-/* === THANK YOU PAGE === */
-/* === THANK YOU PAGE (Centered Box) === */
-.thankyou-wrapper {
-  min-height: 80vh;                 /* fills most of screen */
-  display: flex;
-  justify-content: center;          /* horizontal center */
-  align-items: center;              /* vertical center */
-  text-align: center;
-  background-color: #f8f8f8;        /* light page background */
-}
-
-.thankyou-card {
-  background-color: #fff;
-  padding: 50px 60px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  width: 90%;
-}
-
-.thankyou-card h1 {
-  color: #222;
-  margin-bottom: 15px;
-  font-size: 2rem;
-}
-
-.thankyou-card p {
-  color: #555;
-  margin-bottom: 25px;
-  font-size: 1rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background: linear-gradient(90deg, #6a5acd, #00bcd4);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: linear-gradient(90deg, #00bcd4, #6a5acd);
-}
-
-/* === NAVIGATION MENU === */
-.site-nav.main-nav {
-  background-color: #111;
-  padding: 12px 0;
-  text-align: center;
-}
-
-.site-nav.main-nav ul {
-  list-style: none;        /* removes bullets */
-  margin: 0;
-  padding: 0;
-}
-
-.site-nav.main-nav li {
-  display: inline-block;   /* makes items horizontal */
-  margin: 0 20px;
-}
-
-.site-nav.main-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.site-nav.main-nav a:hover {
-  text-decoration: underline;
-}
-
-/* === ACTIVE LINK STYLING === */
-.site-nav.main-nav a.active {
-  color: #00bcd4;
-  border-bottom: 2px solid #00bcd4;
-  padding-bottom: 4px;
-}
-
-.site-nav.main-nav a.active:hover {
-  text-decoration: none;
-}
-
-
-/* === HERO SECTION === */
-.hero {
-  /* top layer = gradient overlay, bottom layer = image */
-  background:
-    linear-gradient(90deg, rgba(106,90,205,.7), rgba(0,188,212,.7)),
-    url("../hero-dish.jpg") center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 80px 20px;
-  min-height: 40vh;              /* gives it some height even with little text */
-  display: flex;                  /* centers text nicely */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,.2);
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  text-shadow: 0 2px 5px rgba(0,0,0,.4);
-}
-
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-}
-
-.hero .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #fff;
-  color: #111;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background .3s, color .3s;
-}
-.hero .btn:hover { background: #f0f0f0; color: #333; }
-
-
-figure {
-  text-align: center;
-  margin: 30px auto;
-}
-
+/* ========== Gallery (two-up) ========== */
+figure { text-align: center; margin: 30px auto; }
 figure img {
   width: 90%;
   max-width: 900px;
-  border-radius: 12px;                 /* rounds edges (req #7) */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* subtle shadow (req #8) */
+  border-radius: 12px; /* req #7: rounded image */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* req #8: shadow */
 }
+figcaption { font-size: 0.9rem; color: #666; margin-top: 8px; }
 
-figcaption {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 8px;
-}
-
-/* === GALLERY SECTION === */
 .gallery {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  flex-wrap: wrap;           /* ensures mobile responsiveness */
+  flex-wrap: wrap;           /* mobile-friendly */
   padding: 40px 20px;
 }
-
 .gallery figure {
   background: #fff;
   border-radius: 12px;
@@ -412,39 +219,43 @@ figcaption {
   max-width: 650px;
   flex: 1 1 45%;             /* 2 per row on desktop */
 }
-
 .gallery img {
   width: 100%;
-  height: 280px;             /* adjust height */
-  object-fit: cover;         /* keeps image proportionate */
+  height: 280px;
+  object-fit: cover;
   border-bottom: 1px solid #eee;
 }
+.gallery figcaption { padding: 12px; font-size: 0.9rem; color: #666; }
 
-.gallery figcaption {
-  padding: 12px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.about-section {
-  background: #fff;
-  padding: 40px;
-  margin: 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  max-width: 800px;
+/* ========== Thank You page (centered box) ========== */
+.thankyou-wrapper {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  background-color: #f8f8f8;
+}
+.thankyou-card {
+  background-color: #fff;
+  padding: 50px 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 90%;
+}
+.thankyou-card h1 { color: #222; margin-bottom: 15px; font-size: 2rem; }
+.thankyou-card p  { color: #555; margin-bottom: 25px; font-size: 1rem; }
+
+/* ========== Footer ========== */
+footer {
+  color: #666;
+  text-align: center;
+  padding: 28px 16px 40px;
 }
 
-.about-section h1 {
-  color: #222;
-  margin-bottom: 16px;
+/* ========== Responsive tweaks ========== */
+@media (max-width: 640px) {
+  .container { padding: 18px; }
+  .gallery img { height: 220px; }
 }
-
-.about-section p {
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 14px;
-}
-
-
