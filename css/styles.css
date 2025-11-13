@@ -47,14 +47,6 @@ nav a, .site-nav a {
 }
 nav a:hover, .site-nav a:hover { opacity: 0.85; }
 
-/* ========== Hero (optional) ========== */
-.hero {
-  background: linear-gradient(90deg, #6a5acd, #00bcd4);
-  color: #fff;
-  padding: 72px 24px;
-  text-align: center;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
-}
 
 /* ========== Headings / Sections ========== */
 h1 { font-size: clamp(28px, 5vw, 44px); margin: 24px 0 8px; }
@@ -343,9 +335,13 @@ footer {
 
 
 /* === HERO SECTION === */
+
 .hero {
-  background-image: linear-gradient(90deg, #6a5acd, #00bcd4);
-  color: white;
+  /* gradient overlay + image */
+  background:
+    linear-gradient(90deg, rgba(106,90,205,0.7), rgba(0,188,212,0.7)),
+    url("/hero-dish.jpg") center/cover no-repeat;
+  color: #fff;
   text-align: center;
   padding: 80px 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -396,13 +392,4 @@ figcaption {
   margin-top: 8px;
 }
 
-.hero {
-  /* gradient overlay + image */
-  background:
-    linear-gradient(90deg, rgba(106,90,205,0.7), rgba(0,188,212,0.7)),
-    url("../images/hero-restaurant.jpg") center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 80px 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
+
