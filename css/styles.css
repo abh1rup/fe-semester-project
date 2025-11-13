@@ -330,6 +330,17 @@ footer {
   text-decoration: underline;
 }
 
+/* === ACTIVE LINK STYLING === */
+.site-nav.main-nav a.active {
+  color: #00bcd4;
+  border-bottom: 2px solid #00bcd4;
+  padding-bottom: 4px;
+}
+
+.site-nav.main-nav a.active:hover {
+  text-decoration: none;
+}
+
 
 /* === HERO SECTION === */
 .hero {
