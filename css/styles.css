@@ -377,3 +377,21 @@ footer {
   background: #f0f0f0;
   color: #333;
 }
+
+figure {
+  text-align: center;
+  margin: 30px auto;
+}
+
+figure img {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;                 /* rounds edges (req #7) */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* subtle shadow (req #8) */
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 8px;
+}
