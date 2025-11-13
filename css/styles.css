@@ -409,7 +409,7 @@ figcaption {
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   overflow: hidden;
   text-align: center;
-  max-width: 450px;
+  max-width: 650px;
   flex: 1 1 45%;             /* 2 per row on desktop */
 }
 
