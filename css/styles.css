@@ -393,4 +393,37 @@ figcaption {
   margin-top: 8px;
 }
 
+/* === GALLERY SECTION === */
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;           /* ensures mobile responsiveness */
+  padding: 40px 20px;
+}
+
+.gallery figure {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  overflow: hidden;
+  text-align: center;
+  max-width: 450px;
+  flex: 1 1 45%;             /* 2 per row on desktop */
+}
+
+.gallery img {
+  width: 100%;
+  height: 280px;             /* adjust height */
+  object-fit: cover;         /* keeps image proportionate */
+  border-bottom: 1px solid #eee;
+}
+
+.gallery figcaption {
+  padding: 12px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
 
