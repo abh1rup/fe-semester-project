@@ -2,87 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My Restaurant</title>
+  <title>Rebel Table | Oxford, MS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/main.js" defer></script>
 </head>
 <body>
 
-
-
-<nav class="site-nav main-nav"> 
+<!-- Nav (4 items: 3 internal + 1 external) -->
+<nav class="site-nav main-nav" aria-label="Primary">
   <ul>
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="menu.html">Menu</a></li>
     <li><a href="form.html">Contact</a></li>
-    <li><a href="https://olemiss.edu/student-life/campus-living/dining/" target="_blank">Ole Miss Dining</a></li>
+    <li><a href="https://olemiss.edu/student-life/campus-living/dining/"
+           target="_blank" rel="noopener noreferrer">Ole Miss Dining</a></li>
   </ul>
 </nav>
 
-<!-- === HERO HEADER === -->
+<!-- Hero -->
 <header class="hero">
-  <h1>Welcome to My Restaurant</h1>
-    <p>Fresh. Simple. Local.</p>
-    <a class="btn" href="menu.html">View Menu</a>
+  <h1>Welcome to Rebel Table</h1>
+  <p>Fresh. Simple. Local.</p>
+  <a class="btn" href="menu.html">View Menu</a>
 </header>
 
-  
+<main>
+  <!-- Two-up image gallery with proper attribution -->
+  <section class="gallery" aria-label="Restaurant photos">
+    <figure>
+      <img src="Food1.jpg" alt="Close-up of a fresh pasta dish with herbs">
+      <figcaption>
+        Photo by
+        <a href="https://unsplash.com/@heftiba" target="_blank" rel="noopener noreferrer">Toa Heftiba</a>
+        on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+      </figcaption>
+    </figure>
 
-     <!-- Feature image with proper credit -->
-  <section class="gallery">
-  <figure>
-    <img src="Food1.jpg" alt="Restaurant dish 1">
-    <figcaption>
-      Photo by Toa Heftiba
-      </a>
-      on Unsplash
-    </figcaption>
-  </figure>
+    <figure>
+      <img src="Food2.jpg" alt="Plated entrée with greens in a bright dining room">
+      <figcaption>
+        Photo by
+        <a href="https://unsplash.com/@nicna" target="_blank" rel="noopener noreferrer">Nima Naseri</a>
+        on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+      </figcaption>
+    </figure>
+  </section>
 
-  <figure>
-    <img src="Food2.jpg" alt="Restaurant dish 2">
-    <figcaption>
-      Photo by Nima Naseri
-      </a>
-      on Unsplash
-    </figcaption>
-  </figure>
-</section>
+  <hr>
 
-  <main>
+  <!-- About card -->
+  <section class="about-section">
+    <h1>About Rebel Table</h1>
+    <p>
+      Rebel Table was born in Oxford with a simple idea — good food should feel like home.
+      Our kitchen blends classic Southern comfort with modern flavor, using fresh, local ingredients
+      and a whole lot of heart.
+    </p>
+    <p>
+      From weekday lunches to weekend dinners, we believe in slowing down, sharing stories,
+      and serving meals that bring people together. Because here, every table is a Rebel Table.
+    </p>
+  </section>
+
+  <!-- Hours card -->
+  <section class="hours-section" aria-label="Operating hours">
     <h2>Hours</h2>
     <div class="table-wrap">
-     <section class="hours-section">
-  <h2>Hours</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Day</th>
-        <th>Open</th>
-        <th>Close</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Mon–Fri</td>
-        <td>11:00</td>
-        <td>21:00</td>
-      </tr>
-      <tr>
-        <td>Sat</td>
-        <td>10:00</td>
-        <td>22:00</td>
-      </tr>
-      <tr>
-        <td>Sun</td>
-        <td>Closed</td>
-        <td>—</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+      <table>
+        <caption class="sr-only">Weekly operating hours</caption>
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Open</th>
+            <th scope="col">Close</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mon–Fri</td><td>11:00</td><td>21:00</td>
+          </tr>
+          <tr>
+            <td>Sat</td><td>10:00</td><td>22:00</td>
+          </tr>
+          <tr>
+            <td>Sun</td><td>Closed</td><td>—</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </main>
+  </section>
+</main>
+
+<footer>
+  © 2025 Rebel Table • Oxford, MS • Image credits: Unsplash photographers listed above
+</footer>
+
 </body>
 </html>
