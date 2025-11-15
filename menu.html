@@ -2,62 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Menu | My Restaurant</title>
+  <title>Rebel Table | Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
-
-<nav class="site-nav main-nav"> 
+<nav class="site-nav main-nav" aria-label="Primary">
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="menu.html" class="active">Menu</a></li>
     <li><a href="form.html">Contact</a></li>
-    <li><a href="https://olemiss.edu/student-life/campus-living/dining/" target="_blank">Ole Miss Dining</a></li>
+    <li>
+      <a href="https://olemiss.edu/student-life/campus-living/dining/"
+         target="_blank" rel="noopener noreferrer">
+        Ole Miss Dining
+      </a>
+    </li>
   </ul>
 </nav>
 
 <header class="hero">
-    <h1>View Our Menu</h1>
-    <p>Enjoy All Our delicious Items.</p>
-    <a class="btn" href="menu.html">View Menu</a>
+  <h1>View Our Menu</h1>
+  <p>Comfort classics and modern Southern favorites.</p>
+  <a class="btn" href="#menu-section">View Menu</a>
 </header>
-  
-  
-  <main>
+
+<main>
+
+  <section class="menu-section" id="menu-section">
     <h2>Our Delicious Menu</h2>
-  
-  <main>
-    <section class="menu-section">
-      <h1>Menu</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Margherita Pizza</td>
-            <td>Fresh mozzarella, basil, tomato sauce</td>
-            <td>$10.99</td>
-          </tr>
-          <tr>
-            <td>Spaghetti Alfredo</td>
-            <td>Creamy parmesan sauce</td>
-            <td>$12.99</td>
-          </tr>
-          <tr>
-            <td>House Salad</td>
-            <td>Mixed greens, vinaigrette</td>
-            <td>$6.50</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+
+    <!-- Highlight image with credit (meets img + figure + figcaption) -->
+    <figure>
+      <img src="Food1.jpg" alt="Assorted Rebel Table dishes on a wooden table">
+      <figcaption>
+        Photo by
+        <a href="https://unsplash.com/@heftiba" target="_blank" rel="noopener noreferrer">Toa Heftiba</a>
+        on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+      </figcaption>
+    </figure>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Margherita Pizza</td>
+          <td>Fresh mozzarella, basil, tomato sauce</td>
+          <td>$10.99</td>
+        </tr>
+        <tr>
+          <td>Spaghetti Alfredo</td>
+          <td>Creamy parmesan sauce</td>
+          <td>$12.99</td>
+        </tr>
+        <tr>
+          <td>House Salad</td>
+          <td>Mixed greens, vinaigrette</td>
+          <td>$6.50</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 Rebel Table • Oxford, MS • Image credits: Unsplash photographers listed above
+</footer>
+
 </body>
 </html>
