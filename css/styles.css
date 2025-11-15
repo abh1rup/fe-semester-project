@@ -1,9 +1,14 @@
 /* ========== Base / Reset ========== */
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -13,19 +18,38 @@ body {
   background: #fafafa;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-a { color: #0a6cff; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: #0a6cff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 /* ========== Utilities ========== */
-.center { text-align: center; }
-.rounded-img { border-radius: 12px; }
+.center {
+  text-align: center;
+}
+.rounded-img {
+  border-radius: 12px;
+}
 
 /* Visually hidden but screen-reader readable */
 .sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0, 0, 1px, 1px); white-space: nowrap; border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Optional page container if you use it elsewhere */
@@ -36,25 +60,52 @@ a:hover { text-decoration: underline; }
 }
 
 /* ========== Navigation ========== */
-nav, .site-nav {
+nav,
+.site-nav {
   background: #111;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-nav a, .site-nav a {
+nav a,
+.site-nav a {
   color: #fff;
   font-weight: 600;
 }
-nav a:hover, .site-nav a:hover { opacity: 0.85; }
+
+nav a:hover,
+.site-nav a:hover {
+  opacity: 0.85;
+}
 
 /* Structured main nav */
-.site-nav.main-nav { padding: 12px 0; text-align: center; }
-.site-nav.main-nav ul { list-style: none; margin: 0; padding: 0; }
-.site-nav.main-nav li { display: inline-block; margin: 0 20px; }
-.site-nav.main-nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; }
-.site-nav.main-nav a:hover { text-decoration: underline; }
+.site-nav.main-nav {
+  padding: 12px 0;
+  text-align: center;
+}
+
+.site-nav.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav.main-nav li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.site-nav.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.site-nav.main-nav a:hover {
+  text-decoration: underline;
+}
 
 /* Active link */
 .site-nav.main-nav a.active {
@@ -62,30 +113,39 @@ nav a:hover, .site-nav a:hover { opacity: 0.85; }
   border-bottom: 2px solid #00bcd4;
   padding-bottom: 4px;
 }
-.site-nav.main-nav a.active:hover { text-decoration: none; }
+
+.site-nav.main-nav a.active:hover {
+  text-decoration: none;
+}
 
 /* ========== Hero (with background image + gradient overlay) ========== */
 .hero {
   /* top layer = gradient overlay, bottom layer = image */
   background:
-    linear-gradient(90deg, rgba(106,90,205,.7), rgba(0,188,212,.7)),
-    url("../hero-dish.jpg") center/cover no-repeat; /* styles.css is in /css */
+    linear-gradient(90deg, rgba(106, 90, 205, 0.7), rgba(0, 188, 212, 0.7)),
+    url("../hero-dish.jpg") center / cover no-repeat; /* styles.css is in /css */
   color: #fff;
   text-align: center;
   padding: 80px 20px;
-  min-height: 40vh;              /* keeps height even with little text */
+  min-height: 40vh; /* keeps height even with little text */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .hero h1 {
   font-size: clamp(28px, 5vw, 44px);
   margin-bottom: 10px;
-  text-shadow: 0 2px 5px rgba(0,0,0,.4);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* req: text-shadow */
 }
-.hero p { font-size: 1.1rem; margin-bottom: 25px; }
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
 .hero .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -94,23 +154,36 @@ nav a:hover, .site-nav a:hover { opacity: 0.85; }
   border-radius: 6px;
   text-decoration: none;
   font-weight: 700;
-  transition: background .3s, color .3s;
+  transition: background 0.3s, color 0.3s;
 }
-.hero .btn:hover { background: #f0f0f0; color: #333; }
+
+.hero .btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
 
 /* ========== Buttons (shared) ========== */
-.btn, button[type="submit"] {
+.btn,
+button[type="submit"] {
   display: inline-block;
   padding: 12px 16px;
   border: 0;
   border-radius: 10px;
   color: #fff;
-  background: linear-gradient(90deg, #6a5acd, #00bcd4);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background: linear-gradient(
+    90deg,
+    #6a5acd,
+    #00bcd4
+  ); /* req: linear-gradient */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* req: box-shadow */
   cursor: pointer;
   font-weight: 600;
 }
-.btn:hover, button[type="submit"]:hover { filter: brightness(1.05); }
+
+.btn:hover,
+button[type="submit"]:hover {
+  filter: brightness(1.05);
+}
 
 /* ========== Card-style Sections (About, Hours, Menu) ========== */
 .about-section,
@@ -120,7 +193,7 @@ nav a:hover, .site-nav a:hover { opacity: 0.85; }
   padding: 30px 40px;
   margin: 40px auto;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 700px;
   text-align: left;
@@ -129,19 +202,26 @@ nav a:hover, .site-nav a:hover { opacity: 0.85; }
   flex-direction: column;
   align-items: center;
 }
+
 .about-section h1,
 .hours-section h2,
-.menu-section h1 { margin: 0 0 20px 0; color: #222; text-align: center; }
+.menu-section h1 {
+  margin: 0 0 20px 0;
+  color: #222;
+  text-align: center;
+}
 
 /* ========== Tables (used inside Hours/Menu cards) ========== */
-.table-wrap { overflow-x: auto; }
+.table-wrap {
+  overflow-x: auto;
+}
 
 table {
   width: 100%;
   border-collapse: collapse;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   margin: 16px 0;
 }
@@ -152,11 +232,15 @@ thead th {
   padding: 12px 14px;
   font-weight: 700;
 }
+
 tbody td {
   border-top: 1px solid #e9ecf3;
   padding: 12px 14px;
 }
-tbody tr:nth-child(even) { background: #fcfdff; }
+
+tbody tr:nth-child(even) {
+  background: #fcfdff;
+}
 
 /* ========== Forms (Contact page) ========== */
 form {
@@ -165,9 +249,16 @@ form {
   margin: 24px auto;
   padding: 28px;
   border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
-label { display: block; font-weight: 600; margin: 8px 0 6px; color: #333; }
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 8px 0 6px;
+  color: #333;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -181,96 +272,77 @@ input[type="tel"] {
   font-size: 15px;
   margin-bottom: 16px;
 }
+
 input:focus {
   outline: none;
   background: #fff;
   border-color: #6a5acd;
-  box-shadow: 0 0 0 3px rgba(106,90,205,0.18);
+  box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.18);
 }
-/* Cleaner invalid state */
-input:invalid[required] { border-color: #e25555; }
-/* Full-width submit button */
-form button[type="submit"] { width: 100%; margin-top: 6px; }
 
-/* ========== Gallery (two-up) ========== */
-figure { text-align: center; margin: 30px auto; }
+/* Cleaner invalid state */
+input:invalid[required] {
+  border-color: #e25555;
+}
+
+/* Full-width submit button */
+form button[type="submit"] {
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* ========== Figure / Gallery (Home) ========== */
+figure {
+  text-align: center;
+  margin: 30px auto;
+}
+
 figure img {
   width: 90%;
   max-width: 900px;
   border-radius: 12px; /* req #7: rounded image */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* req #8: shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* req #8: shadow */
 }
-figcaption { font-size: 0.9rem; color: #666; margin-top: 8px; }
+
+figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 8px;
+}
 
 .gallery {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  flex-wrap: wrap;           /* mobile-friendly */
+  flex-wrap: wrap; /* mobile-friendly */
   padding: 40px 20px;
 }
+
 .gallery figure {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   text-align: center;
   max-width: 650px;
-  flex: 1 1 45%;             /* 2 per row on desktop */
+  flex: 1 1 45%; /* 2 per row on desktop */
 }
+
 .gallery img {
   width: 100%;
   height: 280px;
   object-fit: cover;
   border-bottom: 1px solid #eee;
 }
-.gallery figcaption { padding: 12px; font-size: 0.9rem; color: #666; }
 
-/* ========== Thank You page (centered box) ========== */
-.thankyou-wrapper {
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #f8f8f8;
-}
-.thankyou-card {
-  background-color: #fff;
-  padding: 50px 60px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  max-width: 600px;
-  width: 90%;
-}
-.thankyou-card h1 { color: #222; margin-bottom: 15px; font-size: 2rem; }
-.thankyou-card p  { color: #555; margin-bottom: 25px; font-size: 1rem; }
-
-/* ========== Footer ========== */
-footer {
+.gallery figcaption {
+  padding: 12px;
+  font-size: 0.9rem;
   color: #666;
-  text-align: center;
-  padding: 28px 16px 40px;
 }
 
-/* ========== Responsive tweaks ========== */
-@media (max-width: 640px) {
-  .container { padding: 18px; }
-  .gallery img { height: 220px; }
-}
-
-.special-card {
-  background: #fff;
-  padding: 25px;
-  margin: 30px auto;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 600px;
-}
-
-/* ========== Menu Photo Section ========== */
+/* ========== Menu Photo Section (Menu page image) ========== */
 .menu-photo {
   width: 80%;
   max-width: 750px;
@@ -280,7 +352,7 @@ footer {
 .menu-photo figure {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   text-align: center;
   padding-bottom: 10px;
@@ -300,3 +372,66 @@ footer {
   color: #666;
 }
 
+/* ========== Daily Special Card (JS section) ========== */
+.special-card {
+  background: #fff;
+  padding: 25px;
+  margin: 30px auto;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+/* ========== Thank You page (centered box) ========== */
+.thankyou-wrapper {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.thankyou-card {
+  background-color: #fff;
+  padding: 50px 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+}
+
+.thankyou-card h1 {
+  color: #222;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.thankyou-card p {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+/* ========== Footer ========== */
+footer {
+  color: #666;
+  text-align: center;
+  padding: 28px 16px 40px;
+}
+
+/* ========== Responsive tweaks ========== */
+@media (max-width: 640px) {
+  .container {
+    padding: 18px;
+  }
+
+  .gallery img {
+    height: 220px;
+  }
+
+  .menu-photo img {
+    height: 240px;
+  }
+}
