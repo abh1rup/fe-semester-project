@@ -2,37 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Thank You | My Restaurant</title>
+  <title>Thank You | Rebel Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-
 
 <nav class="site-nav main-nav"> 
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="menu.html">Menu</a></li>
     <li><a href="form.html">Contact</a></li>
-    <li><a href="https://olemiss.edu/student-life/campus-living/dining/" target="_blank">Ole Miss Dining</a></li>
+    <li>
+      <a href="https://olemiss.edu/student-life/campus-living/dining/"
+         target="_blank" rel="noopener noreferrer">
+        Ole Miss Dining
+      </a>
+    </li>
   </ul>
 </nav>
 
-<header class="hero">
- <h1>Thank You!</h1>
-    <p>Your message has been received.</p>
-    <a class="btn" href="menu.html">View Menu</a>
-</header>
+<main class="thankyou-wrapper">
+  <div class="thankyou-card">
+    <h1>Thank You!</h1>
+    <p>Your message has been received. We’ll get back to you soon.</p>
 
-  
- 
- <main class="thankyou-wrapper">
-    <div class="thankyou-card">
-      <h1>Thank You!</h1>
-      <p>Your message has been received. We’ll get back to you soon.</p>
-      <a href="index.html" class="btn">Return Home</a>
-    </div>
-  </main>
-  
-  <footer>© 2025 My Restaurant</footer>
+    <!-- Simple image to satisfy "one image per page" -->
+    <figure>
+      <img src="Food1.jpg" alt="Rebel Table dish served at the restaurant">
+      <figcaption>A taste of what’s waiting for you at Rebel Table.</figcaption>
+    </figure>
+
+    <a href="index.html" class="btn">Return Home</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 Rebel Table • Oxford, MS • Image credits on Home page
+</footer>
+
 </body>
 </html>
