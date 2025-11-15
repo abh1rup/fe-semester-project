@@ -2,57 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Rebel Table | Menu</title>
+  <title>Menu | Rebel Table</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
 
-<nav class="site-nav main-nav" aria-label="Primary">
+<!-- NAVIGATION -->
+<nav class="site-nav main-nav">
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="menu.html" class="active">Menu</a></li>
+    <li><a class="active" href="menu.html">Menu</a></li>
     <li><a href="form.html">Contact</a></li>
-    <li>
-      <a href="https://olemiss.edu/student-life/campus-living/dining/"
-         target="_blank" rel="noopener noreferrer">
-        Ole Miss Dining
-      </a>
-    </li>
+    <li><a href="https://olemiss.edu/student-life/campus-living/dining/" target="_blank">Ole Miss Dining</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <header class="hero">
   <h1>View Our Menu</h1>
-  <p>Comfort classics and modern Southern favorites.</p>
+  <p>Enjoy all of our delicious items.</p>
   <a class="btn" href="#menu-section">View Menu</a>
 </header>
 
+<!-- MAIN CONTENT -->
 <main>
 
-  <section class="menu-section" id="menu-section">
-    <h2>Our Delicious Menu</h2>
+  <h2 class="center">Our Delicious Menu</h2>
 
-    <!-- Highlight image with credit (meets img + figure + figcaption) -->
-    <figure>
-      <img src="Food1.jpg" alt="Assorted Rebel Table dishes on a wooden table">
-      <figcaption>
-        Photo by
-        <a href="https://unsplash.com/@heftiba" target="_blank" rel="noopener noreferrer">Toa Heftiba</a>
-        on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
-      </figcaption>
-    </figure>
+  <section id="menu-section" class="menu-section">
+    <h1>Menu</h1>
 
     <table>
       <thead>
         <tr>
-          <th scope="col">Item</th>
-          <th scope="col">Description</th>
-          <th scope="col">Price</th>
+          <th>Item</th>
+          <th>Description</th>
+          <th>Price</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="menu-table-body">
         <tr>
           <td>Margherita Pizza</td>
           <td>Fresh mozzarella, basil, tomato sauce</td>
@@ -74,8 +64,9 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer>
-  © 2025 Rebel Table • Oxford, MS • Image credits: Unsplash photographers listed above
+  © 2025 Rebel Table • Oxford, MS • Image credits: Unsplash
 </footer>
 
 </body>
