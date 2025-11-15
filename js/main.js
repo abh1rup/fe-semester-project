@@ -1,5 +1,7 @@
 console.log("Site loaded.");
 
+// ================= DAILY SPECIALS (MENU PAGE) =================
+
 // Daily specials using an array
 const specials = [
   "Half-off Margherita Pizza!",
@@ -12,6 +14,25 @@ const specials = [
 // Function to pick a random special
 function getSpecial() {
   const randomIndex = Math.floor(Math.random() * specials.length);
-  document.getElementById("specialText").textContent = specials[randomIndex];
-  alert("Today's special has been revealed!");
+  const specialEl = document.getElementById("specialText");
+  if (specialEl) {
+    specialEl.textContent = specials[randomIndex];
+    alert("Today's special has been revealed!");
+  }
+}
+
+
+// ================= CONTACT FORM HANDLER (form.html) =================
+
+function handleSubmit(e) {
+  // This will be called from the form's onsubmit attribute
+  e.preventDefault();
+
+  const ok = confirm("Are you sure you want to submit?");
+  if (ok) {
+    alert("Thank you for contacting us!");
+    window.location.href = "thankyou.html";
+  } else {
+    alert("Submission canceled.");
+  }
 }
