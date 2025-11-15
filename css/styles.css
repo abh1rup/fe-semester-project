@@ -214,12 +214,13 @@ button[type="submit"]:hover {
 /* === SPECIAL: About section with background image === */
 .about-section {
   background:
-   /* linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.35)),
-    url("../about-bg.jpg") center/cover no-repeat;
-  color: #f5f5f5;*/
+   linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.35)),
+    url("../about_bg.jpg") center/cover no-repeat;
+  color: #f5f5f5;
 
-   linear-gradient(90deg, rgba(106, 90, 205, 0.7), rgba(0, 188, 212, 0.7)),
-    url("../about-bg.jpg") center / cover no-repeat; /* styles.css is in /css */
+   /*linear-gradient(90deg, rgba(106, 90, 205, 0.7), rgba(0, 188, 212, 0.7)),
+    url("../about_bg.jpg") center / cover no-repeat; /* styles.css is in /css */
+  */
 }
 
 .about-section h1 {
