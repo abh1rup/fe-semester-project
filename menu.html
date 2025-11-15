@@ -10,10 +10,10 @@
 <body>
 
 <!-- NAVIGATION -->
-<nav class="site-nav main-nav">
+<nav class="site-nav main-nav"> 
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a class="active" href="menu.html">Menu</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
     <li><a href="form.html">Contact</a></li>
     <li><a href="https://olemiss.edu/student-life/campus-living/dining/" target="_blank">Ole Miss Dining</a></li>
   </ul>
@@ -21,19 +21,23 @@
 
 <!-- HERO -->
 <header class="hero">
-  <h1>View Our Menu</h1>
-  <p>Enjoy all of our delicious items.</p>
-  <a class="btn" href="#menu-section">View Menu</a>
+    <h1>View Our Menu</h1>
+    <p>Enjoy all our delicious items.</p>
+    <a class="btn" href="menu.html">View Menu</a>
 </header>
 
-<!-- MAIN CONTENT -->
 <main>
 
-  <h2 class="center">Our Delicious Menu</h2>
+  <!-- ⭐ DAILY SPECIALS SECTION (JS INTERACTIVE) -->
+  <section class="specials-section">
+    <h2>Today's Specials</h2>
+    <p class="special-text">Loading daily specials...</p>
+    <button id="newSpecialBtn" class="btn">Show Another Special</button>
+  </section>
 
-  <section id="menu-section" class="menu-section">
+  <!-- MENU CARD -->
+  <section class="menu-section">
     <h1>Menu</h1>
-
     <table>
       <thead>
         <tr>
@@ -42,7 +46,7 @@
           <th>Price</th>
         </tr>
       </thead>
-      <tbody id="menu-table-body">
+      <tbody>
         <tr>
           <td>Margherita Pizza</td>
           <td>Fresh mozzarella, basil, tomato sauce</td>
@@ -63,11 +67,6 @@
   </section>
 
 </main>
-
-<!-- FOOTER -->
-<footer>
-  © 2025 Rebel Table • Oxford, MS • Image credits: Unsplash
-</footer>
 
 </body>
 </html>
