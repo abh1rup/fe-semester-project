@@ -1,26 +1,15 @@
-<!doctype html>
+<!doctype html> 
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | My Restaurant</title>
+  <title>Contact | Rebel Table</title>
 
-  <!-- 1) Same stylesheet as index -->
+  <!-- Same stylesheet as index -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <script>
-    // Same confirm + redirect behavior
-    function handleSubmit(e) {
-      e.preventDefault();
-      const ok = confirm("Are you sure you want to submit?");
-      if (ok) {
-        alert("Thank you for contacting us!");
-        window.location.href = "thankyou.html";
-      } else {
-        alert("Submission canceled.");
-      }
-    }
-  </script>
+  <!-- External JavaScript file for all pages -->
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -29,7 +18,12 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="menu.html">Menu</a></li>
     <li><a href="form.html" class="active">Contact</a></li>
-    <li><a href="https://olemiss.edu/student-life/campus-living/dining/" target="_blank">Ole Miss Dining</a></li>
+    <li>
+      <a href="https://olemiss.edu/student-life/campus-living/dining/" 
+         target="_blank" rel="noopener noreferrer">
+        Ole Miss Dining
+      </a>
+    </li>
   </ul>
 </nav>
 
@@ -40,36 +34,30 @@
   <a class="btn" href="menu.html">View Menu</a>
 </header>
 
-  <!-- Main content container (same spacing feel as index) -->
-  <main>
-    <h2>Get in touch</h2>
+<main>
+  <h2 class="center">Get in touch</h2>
 
-    <!-- Reuse your form; classes will be picked up by styles.css -->
-    <form id="contactForm" onsubmit="handleSubmit(event)">
-      <label>First Name*<br>
-        <input type="text" name="firstName" required>
-      </label><br><br>
+  <!-- Form now calls handleSubmit from main.js -->
+  <form id="contactForm" onsubmit="handleSubmit(event)">
+    <label for="firstName">First Name*</label>
+    <input id="firstName" type="text" name="firstName" required>
 
-      <label>Email*<br>
-        <input type="email" name="email" required>
-      </label><br><br>
+    <label for="email">Email*</label>
+    <input id="email" type="email" name="email" required>
 
-      <label>Password*<br>
-        <input type="password" name="password" minlength="6" required>
-      </label><br><br>
+    <label for="password">Password*</label>
+    <input id="password" type="password" name="password" minlength="6" required>
 
-      <label>Phone<br>
-        <input type="tel" name="phone"
-               pattern="\d{10}|(\d{3}-\d{3}-\d{4})|(\(\d{3}\)\s?\d{3}-\d{4})"
-               title="Use 5551234567, 555-123-4567, or (555) 123-4567"
-               placeholder="555-123-4567">
-      </label><br><br>
+    <label for="phone">Phone</label>
+    <input id="phone" type="tel" name="phone"
+           pattern="\d{10}|(\d{3}-\d{3}-\d{4})|(\(\d{3}\)\s?\d{3}-\d{4})"
+           title="Use 5551234567, 555-123-4567, or (555) 123-4567"
+           placeholder="555-123-4567">
 
-      <!-- Use the same .btn class so the button matches your index -->
-      <button type="submit" class="btn">Submit</button>
-    </form>
-  </main>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</main>
 
-  <footer>© 2025 My Restaurant</footer>
+<footer>© 2025 Rebel Table</footer>
 </body>
 </html>
