@@ -5,39 +5,36 @@
   <title>Menu | Rebel Table</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- This actually loads and runs your JS on this page -->
   <script src="js/main.js" defer></script>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="site-nav main-nav"> 
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="menu.html" class="active">Menu</a></li>
     <li><a href="form.html">Contact</a></li>
-    <li>
-      <a href="https://olemiss.edu/student-life/campus-living/dining/"
-         target="_blank" rel="noopener noreferrer">
-        Ole Miss Dining
-      </a>
-    </li>
+    <li><a href="https://olemiss.edu/student-life/campus-living/dining/" target="_blank">Ole Miss Dining</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
-  <h1>View Our Menu</h1>
-  <p>Enjoy all our delicious Rebel Table favorites.</p>
-  <a class="btn" href="#menu-table">View Menu</a>
+    <h1>Our Menu</h1>
+    <p>Classic Southern dishes with modern flavor.</p>
+    <a class="btn" href="#specials">See Today's Special</a>
 </header>
-
+  
 <main>
 
-  <h2 class="center">Our Delicious Menu</h2>
+  <!-- === DAILY SPECIALS SECTION (JS INTERACTION) === -->
+  <section id="specials" class="specials-section">
+    <h2>Today's Special</h2>
+    <p id="specialText" class="special-text">Click the button to reveal today's special!</p>
+    <button class="btn" onclick="getSpecial()">Reveal Special</button>
+  </section>
 
-  <!-- MAIN MENU TABLE -->
-  <section class="menu-section" id="menu-table">
+  <!-- === MENU TABLE === -->
+  <section class="menu-section">
     <h1>Menu</h1>
     <table>
       <thead>
@@ -67,18 +64,7 @@
     </table>
   </section>
 
-  <!-- DAILY SPECIALS (FILLED BY JS) -->
-  <section class="menu-section" id="specials">
-    <h2>Today’s Specials</h2>
-    <!-- JS will fill this <ul> -->
-    <ul id="specials-list"></ul>
-  </section>
-
 </main>
-
-<footer>
-  © 2025 Rebel Table • Oxford, MS
-</footer>
 
 </body>
 </html>
