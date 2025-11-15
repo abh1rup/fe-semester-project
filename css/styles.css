@@ -219,7 +219,7 @@ button[type="submit"]:hover {
   color: #f5f5f5;*/
 
    linear-gradient(90deg, rgba(106, 90, 205, 0.7), rgba(0, 188, 212, 0.7)),
-    url("../hero-dish.jpg") center / cover no-repeat; /* styles.css is in /css */
+    url("../about-bg.jpg") center / cover no-repeat; /* styles.css is in /css */
 }
 
 .about-section h1 {
