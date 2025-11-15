@@ -306,6 +306,25 @@ input:invalid[required] {
   border-color: #e25555;
 }
 
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d6d9e2;
+  border-radius: 8px;
+  background: #f7f9fc;
+  font-size: 15px;
+  margin-bottom: 16px;
+  resize: vertical;  /* lets user stretch height if needed */
+}
+
+textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: #6a5acd;
+  box-shadow: 0 0 0 3px rgba(106,90,205,0.18);
+}
+
+
 /* Full-width submit button */
 form button[type="submit"] {
   width: 100%;
