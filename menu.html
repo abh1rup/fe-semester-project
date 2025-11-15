@@ -14,28 +14,35 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="menu.html" class="active">Menu</a></li>
     <li><a href="form.html">Contact</a></li>
-    <li><a href="https://olemiss.edu/student-life/campus-living/dining/" target="_blank">Ole Miss Dining</a></li>
+    <li>
+      <a href="https://olemiss.edu/student-life/campus-living/dining/"
+         target="_blank" rel="noopener noreferrer">
+        Ole Miss Dining
+      </a>
+    </li>
   </ul>
 </nav>
 
 <header class="hero">
-    <h1>Our Menu</h1>
-    <p>Classic Southern dishes with modern flavor.</p>
-    <a class="btn" href="#specials">See Today's Special</a>
+  <h1>Our Menu</h1>
+  <p>Classic Southern dishes with a modern twist.</p>
+  <a class="btn" href="#menu-table">Jump to Menu</a>
 </header>
-  
+
 <main>
 
-  <!-- === DAILY SPECIALS SECTION (JS INTERACTION) === -->
-  <section id="specials" class="specials-section">
-    <h2>Today's Special</h2>
-    <p id="specialText" class="special-text">Click the button to reveal today's special!</p>
-    <button class="btn" onclick="getSpecial()">Reveal Special</button>
+  <!-- Daily Special (JS feature) -->
+  <section class="special-card">
+    <h2>Today’s Special</h2>
+    <p id="specialText">Click the button below to reveal today’s special!</p>
+    <button type="button" class="btn" onclick="getSpecial()">
+      Reveal Special
+    </button>
   </section>
 
-  <!-- === MENU TABLE === -->
-  <section class="menu-section">
-    <h1>Menu</h1>
+  <!-- Main Menu Table -->
+  <section class="menu-section" id="menu-table">
+    <h1>Rebel Table Menu</h1>
     <table>
       <thead>
         <tr>
@@ -52,19 +59,33 @@
         </tr>
         <tr>
           <td>Spaghetti Alfredo</td>
-          <td>Creamy parmesan sauce</td>
+          <td>Creamy parmesan sauce with garlic and herbs</td>
           <td>$12.99</td>
         </tr>
         <tr>
           <td>House Salad</td>
-          <td>Mixed greens, vinaigrette</td>
+          <td>Mixed greens, tomatoes, cucumbers, vinaigrette</td>
           <td>$6.50</td>
+        </tr>
+        <tr>
+          <td>Fried Chicken Plate</td>
+          <td>Buttermilk fried chicken with mashed potatoes</td>
+          <td>$13.49</td>
+        </tr>
+        <tr>
+          <td>Catfish Po’ Boy</td>
+          <td>Fried catfish, lettuce, tomato, remoulade on a roll</td>
+          <td>$11.75</td>
         </tr>
       </tbody>
     </table>
   </section>
 
 </main>
+
+<footer>
+  © 2025 Rebel Table • Oxford, MS • Image credits on Home page
+</footer>
 
 </body>
 </html>
